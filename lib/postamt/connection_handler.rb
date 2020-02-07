@@ -93,7 +93,7 @@ module Postamt
     end
 
     def connection_for(klass)
-      Postamt.force_connection || Postamt.connection_stack.last || Postamt.overwritten_default_connections[klass.name] || klass.default_connection || Postamt.default_connection
+      Postamt.force_connection || Postamt.connection_stack.last || klass.default_connection || Postamt.default_connection
     end
 
     def pool_for(klass)
